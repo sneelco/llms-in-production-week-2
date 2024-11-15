@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   && pip install --no-cache-dir --upgrade -r /app/requirements.txt \
   && guardrails configure --disable-metrics --disable-remote-inferencing --token $GUARDRAILS_TOKEN \
   && guardrails hub install hub://guardrails/valid_sql \ 
+  && guardrails hub install hub://reflex/valid_python \ 
   && rm -rf /var/lib/apt/lists/*
 # Add more guardrails to be installed in this chained RUN command!
 
