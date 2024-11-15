@@ -2,7 +2,7 @@ name: Test Week1 Model
 run-name: ${{ github.actor }} is testing the week1 model 🚀
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Test-Week1-Model:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,5 +20,7 @@ jobs:
           pip install pytest
           pip install -r requirements.txt
       - name: Test model
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           pytest week1/test_week1.py
