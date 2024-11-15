@@ -1,0 +1,4 @@
+devcontainer.env
+.deepeval-cache.json
+.deepeval_telemtry.txt
+*.pyc
